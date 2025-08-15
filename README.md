@@ -44,11 +44,8 @@ venv\Scripts\activate          # Windows
 
 2. **Installer les dépendances** :
 
-```bash
-pip install -r requirements.txt
-```
 
-> Ou manuellement :
+> manuellement :
 
 ```bash
 pip install flask scikit-learn matplotlib pandas numpy torch tenseal
