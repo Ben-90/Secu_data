@@ -14,11 +14,11 @@
     }
   </script>
 </head>
-<body class="bg-gray-100 text-gray-900 font-sans">
+<body class="bg-gradient-to-br from-blue-300 to-gray-300 text-gray-900 font-sans">
 
   <!-- Header -->
-  <header class="bg-blue-900 h-14 flex items-center px-6 text-white shadow-lg rounded-t-2xl justify-between">
-    <h1 class="text-xl font-bold tracking-wide">🧠 Mon Dashboard</h1>
+  <header class="bg-blue-500 h-14 flex items-center px-6 text-blue-700 shadow-lg  justify-between">
+    <h1 class="text-xl font-bold tracking-wide">Mon Dashboard</h1>
     <a href="{{url_for('index')}}"><h2 class="text-xl font-bold tracking-normal">Home</h2></a>
   </header>
 
@@ -26,30 +26,30 @@
   <div class="flex h-[calc(100vh-3.5rem)]">
 
     <!-- Sidebar -->
-    <aside class="bg-gradient-to-tr from-blue-950 to-gray-800 w-64 p-6 text-white shadow-xl space-y-4">
+    <aside class="bg-gradient-to-tr from-white to-blue-500 w-64 p-6 text-white shadow-xl space-y-4">
       <nav class="space-y-4">
         
         <!-- Régression Linéaire -->
         <div>
-          <button onclick="toggleSubMenu('submenu-lineaire')" class="w-full flex justify-between items-center px-4 py-3 bg-blue-800 rounded-lg hover:bg-blue-700 transition-all duration-200 shadow-sm">
-            🔷 Régression Linéaire
+          <button onclick="toggleSubMenu('submenu-lineaire')" class="w-full flex justify-between items-center px-4 py-3 bg-blue-600  hover:bg-blue-800 transition-all rounded-lg duration-200 shadow-sm">
+             Modele 1 - Lineaire 
             <span>▼</span>
           </button>
           <div id="submenu-lineaire" class="hidden max-h-0 overflow-hidden transition-all duration-300 ease-in-out space-y-2 pl-4 mt-2">
-            <a href="{{ url_for('iris') }}" class="block bg-blue-700 text-white px-3 py-2 rounded hover:bg-blue-600"> Tester Iris</a>
-            <a href="{{url_for('visu_lin')}}" class="block bg-blue-700 text-white px-3 py-2 rounded hover:bg-blue-600">📁 Visualiser les données</a>
+            <a href="{{ url_for('iris') }}" class="block bg-blue-700 text-white px-3 py-2 rounded hover:bg-blue-500"> Tester Iris</a>
+            <a href="{{url_for('visu_lin')}}" class="block bg-blue-700 text-white px-3 py-2 rounded hover:bg-blue-500">Visualiser les données</a>
           </div>
         </div>
 
         <!-- Régression Logistique -->
         <div>
-          <button onclick="toggleSubMenu('submenu-logistique')" class="w-full flex justify-between items-center px-4 py-3 bg-blue-800 rounded-lg hover:bg-blue-700 transition-all duration-200 shadow-sm">
-            🔶 Régression Logistique
+          <button onclick="toggleSubMenu('submenu-logistique')" class="w-full flex justify-between items-center px-4 py-3 bg-blue-600  hover:bg-blue-800 transition-all rounded-lg duration-200 shadow-sm">
+             Modele 2 
             <span>▼</span>
           </button>
           <div id="submenu-logistique" class="hidden max-h-0 overflow-hidden transition-all duration-300 ease-in-out space-y-2 pl-4 mt-2">
-            <a href="{{url_for('logistique')}}" class="block bg-blue-700 text-white px-3 py-2 rounded hover:bg-blue-600">❤️ Prédiction cardio</a>
-            <a href="{{url_for('visu_log')}}" class="block bg-blue-700 text-white px-3 py-2 rounded hover:bg-blue-600">📂 Visualiser les données </a>
+            <a href="{{url_for('logistique')}}" class="block bg-blue-700 text-white px-3 py-2 rounded hover:bg-blue-600">Prédiction cardio</a>
+            <a href="{{url_for('visu_log')}}" class="block bg-blue-700 text-white px-3 py-2 rounded hover:bg-blue-600">Visualiser les données </a>
           </div>
         </div>
 

@@ -22,11 +22,20 @@ def load_data():
     data = pd.read_csv(DATA_PATH, delimiter=',')
     data = data.dropna()
     data = data.drop(columns=["education", "currentSmoker", "BPMeds", "diabetes", "diaBP", "BMI"])
+    print(f' colonnes avant le grouped : {data.columns}')
     
-    grouped = data.groupby('TenYearCHD')
-    data = grouped.apply(lambda x: x.sample(grouped.size().min(), random_state=73)).reset_index(drop=True)
-    
-    y = torch.tensor(data["TenYearCHD"].values).float().unsqueeze(1)
+    # grouped = data.groupby("TenYearCHD")
+    # data = grouped.apply(lambda x: x.sample(grouped.size().min(), random_state=73)).reset_index(drop=True)
+    min_size = data["TenYearCHD"].value_counts().min()
+
+    data = (
+        data.groupby("TenYearCHD", group_keys=False)
+        .sample(n=min_size, random_state=73)
+        .reset_index(drop=True)
+    )
+    print(f" colonnes des données apres le grouped : {data.columns}")
+
+    y = torch.tensor(data['TenYearCHD'].values).float().unsqueeze(1)
     data = data.drop("TenYearCHD", axis='columns')
     
     data = (data - data.mean()) / data.std()
